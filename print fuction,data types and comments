@@ -1,0 +1,96 @@
+print('hello')
+hello
+
+print('hello')
+print("world")
+hello
+world
+
+#as you can see when i print hello and world in sepratre line why they print seprated bcz there a alreDY built 
+#function in the system that is /n if we want to end this just simply use end= ''
+print('hello', end=' ')
+print( 'world')
+hello world
+'name','om','ankit',1234
+#see
+# now 
+print('name','om','ankit',1234)
+name om ankit 1234
+ystem 
+# as you seeing that when i print the code it gives space btw the words why but i gave , 
+#so this happen bcz of a sep function that is also assigned in system 
+-
+print('name','om','ankit',1234 , sep='-')
+name-om-ankit-1234
+g btw thwm that we want 
+#see we can give anything btw thwm that we want 
+# data types in python
+#basically in python datatypes are categories in 3 these are:
+#basic(int,float,bolean,string)
+#container type(list,tuple,dict,sets)
+#user defined( class)
+#
+#
+ut it print all the same way 
+#basic data ty
+#int
+print(9)
+#and the maximum number int can store is 
+print(1e308)
+#if i write 1e309 or above it shows infinite
+​
+#float
+print(9.3)
+#and the maximum number float can store is
+print(1.7e308)
+​
+#bolean
+print(True)
+print(False)
+#and if i write True like (true) tihs its show error bcz system not avable to recognise it
+​
+#string
+print('Om',end=' ')
+print("Singh",end=' ')
+print("""Tomer""")
+# as you can see i single ' ' then double " " and """ """ but it print all the same way 
+9
+1e+308
+9.3
+1.7e+308
+True
+False
+Om Singh Tomer
+#CONTAINER type they called cointer type bcz they store values in them like conatiner store 
+​
+#list
+print([1,2,3,4,])
+#list is just a array but in python we name it list in another language it is array
+​
+#tuple
+print(( 12,23,43,234))
+​
+#sets
+print({122,23,2324})
+​
+#dict or dictionary
+print({'NAME':'OM','AGE':19,"percent":81.83})
+#in dic we make key value pairs
+​
+​
+​
+[1, 2, 3, 4]
+(12, 23, 43, 234)
+{122, 2324, 23}
+{'NAME': 'OM', 'AGE': 19, 'percent': 81.83}
+third one is class that is object orientef that i read further 
+# the third one is class that is object orientef that i read further 
+# other languages have
+#comments
+# comments are that part that were not execiute by compiler and inter preter
+#but in is not an error 
+#we give comments in our code to increse it readeballity
+# in it industrie we work in teams on big projects so if i stop somewher so my comments helps 
+#my teamests and collegs to know the logic and the work of code where i stop
+# in python we use # to comment a line but python does not have multi line comment system like 
+# other languages have
