@@ -1,0 +1,62 @@
+# today's topic is variables 
+#in any other lang we need to declare the variable first 
+#ex in clang
+# int a = 5
+# in python we not need this bcz python is smart enough
+
+name = 'om'
+a = 5
+print(name,a)
+
+#there were no variable declaration in python this is called DYNAMIC typing 
+
+name = 'om'
+print (name)
+
+name = 4
+print(name)
+
+#in above line as you seeing that i changed the value of name 2 times 
+#if we in c we cant do that 
+#this phenimena in python is called dynamic binding
+
+#special syntex 
+a=1;b=3;c=7
+print(a)
+print(b)
+print(c)
+
+a,b,c=1,3,7
+print(a,b,c)
+
+a,b,c=1,3,7
+print(a)
+print(b)
+print(c)
+
+a='om';b=19;c=89.37
+print(a)
+print(b)
+print(c)
+
+
+
+# keywords
+
+
+import keyword
+print(keyword.kwlist)
+
+#python is a case sensitive prog lang
+#in above you see some keywords there
+#remeber one thing that never name your variable by a keyword 
+#it increase the chane of erroe 
+
+# identifiyers
+
+#a python identifiesr is a name to identify a variable ,class fun, and object
+#we name identifier by using alphabet or _ only
+#identifers keyword nahi rkhne chaiye
+
+
+
