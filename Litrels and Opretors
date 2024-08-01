@@ -1,0 +1,197 @@
+LITRELS
+litrels are raw data given to the variables.
+
+1. Numric litrels
+a=0b1010#binary litrels
+b=100#decimal litrels
+c=0o310#octal litrels
+d=0x12c#hexadecimal litrels
+​
+# float litrels
+float_1=10.3
+float_2=1.5e2
+float_3=1.5e-3
+​
+#complex 
+x=3.14j
+​
+print(a,b,c,d)
+print(float_1,float_2,float_3)
+print(x)
+10 100 200 300
+10.3 150.0 0.0015
+3.14j
+
+
+
+2.string litrels
+string = 'this is python'
+strings = "this is python"
+char = "c"#python me koi alag se charecter nahi hota kyuki python pehle se hi ise string hi maanta hai
+multiline_str = """this is use to write multiple string lines"""
+unicode = u"\U0001f600\U0001F606"
+raw_str=r"raw\n string"
+print(string)
+print(strings)
+print(char)
+print(multiline_str)
+print(raw_str)
+print(unicode)
+this is python
+this is python
+c
+this is use to write multiple string lines
+raw\n string
+😀😆
+
+
+
+3.bolean litrels
+=
+a = True + 4
+b = False + 4
+​
+print("a = ",a)#in python the value of true is = 1 and false is = 0
+print("b = ",b)
+a =  5
+b =  4
+
+
+4.speacial litrels
+#
+a = None
+print(a)
+#we use none to keep any variable without givinf any value assign it with none 
+None
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+OPERATORS
+operators are use to perform oprations on variables.
+
+1.Arithmatic opretors
+X = 9
+Y = 7
+​
+print(X + Y)#addition
+print(X - Y)#subtrection
+print(X * Y)#multiplication
+print(X / Y)#division
+print(X % Y)#modulus
+print(X ** Y)#power of
+print(X // Y)#integer division
+​
+16
+2
+63
+1.2857142857142858
+2
+4782969
+1
+
+
+2. Comparison Opretor
+#not =to
+x = 9
+y = 7
+​
+print(x>y)#greater then
+print(x<y)#lessthen
+print(x>=y)#greater then =to
+print(x<=y)#less then =to
+print(x==y)#double =to
+print(x!=y)#not =to
+​
+​
+​
+True
+False
+True
+False
+False
+True
+
+
+3. Logical Operators
+
+print(not x)
+x = True
+y = False
+​
+print(x and y)
+print(x or y)
+print(not y)
+print(not x)
+False
+True
+True
+False
+
+
+4.Bitwise Operators
+x << y
+# this  opretor work on binary values
+x = 2
+y = 3
+​
+print(x & y)
+print(x | y)
+print(x >> y)
+print(x << y)
+2
+3
+0
+16
+4.Assignment Opretor
+3
+a = 3
+print(a)
+3
+a += 3
+a *= 3
+print(a)
+90
+a *= 3
+a *= 3
+print(a)
+27
+
+
+5. Identity Opretor
+print(a is b)
+# identityt opretor( is )tells the memory lolacation of the varobalr 
+# matlb ro same memory location share kar raghe hai y NAHI
+a = 3
+b = 3
+print(a is b)
+True
+a = "hello"
+b = "hello"
+print(a is b)
+True
+a = [1,2,3,4,5]
+b = [1,2,3,4,5]
+print(a is b)
+False
+a = 'Hello-World'
+b = 'Hello-World'
+print(a is b)
+False
+
+
+
+
+6.Membership opretor
+x = "Delhi"
+print("D" in x)
+#check that something is inside anythoing
+x = "Delhi"
+print("D" in x)
+False
+d
+x = "Delhi"
+print('d' not in x)
+True
