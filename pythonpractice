@@ -1,0 +1,79 @@
+# Question 1: Reverse a string without using slicing
+def reverse_string(s):
+    return "".join(reversed(s))
+
+print(reverse_string("Python"))
+
+# Question 2: Find the second largest number in a list
+def second_largest(numbers):
+    unique_numbers = list(set(numbers))
+    unique_numbers.sort()
+    return unique_numbers[-2]
+
+print(second_largest([10, 20, 4, 45, 99, 99]))
+
+# Question 3: Check if a number is a power of 2
+def is_power_of_two(n):
+    return n > 0 and (n & (n - 1)) == 0
+
+print(is_power_of_two(16))
+print(is_power_of_two(18))
+
+# Question 4: Count the frequency of characters in a string
+from collections import Counter
+
+def char_frequency(s):
+    return Counter(s)
+
+print(char_frequency("mississippi"))
+
+# Question 5: Check if two strings are anagrams
+def are_anagrams(str1, str2):
+    return sorted(str1) == sorted(str2)
+
+print(are_anagrams("listen", "silent"))
+print(are_anagrams("python", "java"))
+
+
+# Question 6: Find the longest word in a sentence
+def longest_word(sentence):
+    words = sentence.split()
+    return max(words, key=len)
+
+print(longest_word("Python is an amazing programming language"))
+
+# Question 7: Remove duplicate elements from a list
+def remove_duplicates(lst):
+    return list(set(lst))
+
+print(remove_duplicates([1, 2, 2, 3, 4, 4, 5]))
+
+# Question 8: Generate Fibonacci sequence up to `n` terms
+def fibonacci(n):
+    a, b = 0, 1
+    result = []
+    for _ in range(n):
+        result.append(a)
+        a, b = b, a + b
+    return result
+
+print(fibonacci(10))
+
+# Question 9: Check if a string is a palindrome
+def is_palindrome(s):
+    return s == s[::-1]
+
+print(is_palindrome("madam"))
+print(is_palindrome("hello"))
+
+# Question 10: Flatten a nested list
+def flatten_list(nested_list):
+    result = []
+    for item in nested_list:
+        if isinstance(item, list):
+            result.extend(flatten_list(item))
+        else:
+            result.append(item)
+    return result
+
+print(flatten_list([1, [2, 3], [4, [5, 6]]]))
