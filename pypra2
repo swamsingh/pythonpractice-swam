@@ -1,0 +1,73 @@
+# Python Questions
+
+# Question 1: Check if a string contains only digits
+def is_only_digits(s):
+    return s.isdigit()
+
+print(is_only_digits("12345"))
+print(is_only_digits("123a45"))
+
+# Question 2: Find the factorial of a number using recursion
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))
+
+# Question 3: Merge two dictionaries
+def merge_dicts(dict1, dict2):
+    return {**dict1, **dict2}
+
+d1 = {"a": 1, "b": 2}
+d2 = {"b": 3, "c": 4}
+print(merge_dicts(d1, d2))
+
+# Question 4: Find all unique elements in a list
+def unique_elements(lst):
+    return list(set(lst))
+
+print(unique_elements([1, 2, 2, 3, 4, 4, 5]))
+
+# Question 5: Calculate the sum of squares of a list of numbers
+def sum_of_squares(lst):
+    return sum(x ** 2 for x in lst)
+
+print(sum_of_squares([1, 2, 3, 4]))
+
+# Question 6: Find the index of the first occurrence of a number in a list
+def find_index(lst, num):
+    return lst.index(num) if num in lst else -1
+
+print(find_index([10, 20, 30, 40], 30))
+print(find_index([10, 20, 30, 40], 50))
+
+# Question 7: Check if a string is a valid email address
+def is_valid_email(email):
+    import re
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    return re.match(pattern, email) is not None
+
+print(is_valid_email("example@gmail.com"))
+print(is_valid_email("example@com"))
+
+# Question 8: Convert a list of strings to uppercase
+def to_uppercase(lst):
+    return [x.upper() for x in lst]
+
+print(to_uppercase(["python", "java", "c++"]))
+
+# Question 9: Check if a list is sorted
+def is_sorted(lst):
+    return lst == sorted(lst)
+
+print(is_sorted([1, 2, 3, 4]))
+print(is_sorted([4, 3, 2, 1]))
+
+# Question 10: Count the number of vowels in a string
+def count_vowels(s):
+    return sum(1 for char in s.lower() if char in "aeiou")
+
+print(count_vowels("Hello World"))
+
+
