@@ -1,0 +1,77 @@
+# Python Questions
+
+# Question 1: Find the length of the longest word in a sentence
+def longest_word_length(sentence):
+    return max(len(word) for word in sentence.split())
+
+print(longest_word_length("Python is a versatile programming language"))
+
+# Question 2: Find the common elements between two lists
+def common_elements(lst1, lst2):
+    return list(set(lst1) & set(lst2))
+
+print(common_elements([1, 2, 3], [2, 3, 4]))
+
+# Question 3: Convert a list of integers to a single concatenated integer
+def list_to_number(lst):
+    return int("".join(map(str, lst)))
+
+print(list_to_number([1, 2, 3, 4]))
+
+# Question 4: Check if a string has balanced parentheses
+def is_balanced(s):
+    stack = []
+    for char in s:
+        if char == '(':
+            stack.append(char)
+        elif char == ')':
+            if not stack:
+                return False
+            stack.pop()
+    return not stack
+
+print(is_balanced("(a + b) - (c)"))
+print(is_balanced("(a + b - (c)"))
+
+# Question 5: Reverse the words in a sentence
+def reverse_words(sentence):
+    return " ".join(sentence.split()[::-1])
+
+print(reverse_words("Python is fun"))
+
+# Question 6: Generate all permutations of a string
+def string_permutations(s):
+    from itertools import permutations
+    return ["".join(p) for p in permutations(s)]
+
+print(string_permutations("abc"))
+
+# Question 7: Replace all vowels in a string with a specific character
+def replace_vowels(s, char):
+    return "".join([char if c in "aeiouAEIOU" else c for c in s])
+
+print(replace_vowels("hello world", "*"))
+
+# Question 8: Calculate the dot product of two vectors
+def dot_product(vec1, vec2):
+    return sum(x * y for x, y in zip(vec1, vec2))
+
+print(dot_product([1, 2, 3], [4, 5, 6]))
+
+# Question 9: Check if two strings are rotations of each other
+def are_rotations(str1, str2):
+    return len(str1) == len(str2) and str2 in (str1 + str1)
+
+print(are_rotations("abcd", "cdab"))
+print(are_rotations("abcd", "acbd"))
+
+# Question 10: Find the smallest positive missing number in a list
+def smallest_missing_positive(lst):
+    lst = set(lst)
+    i = 1
+    while i in lst:
+        i += 1
+    return i
+
+print(smallest_missing_positive([1, 2, 3, 5]))
+
