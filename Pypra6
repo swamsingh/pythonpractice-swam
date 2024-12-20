@@ -1,0 +1,91 @@
+# Python Questions
+
+# Question 1: Check if a string is a valid palindrome ignoring spaces and case differences
+def is_valid_palindrome(s):
+    filtered = ''.join(char.lower() for char in s if char.isalnum())
+    return filtered == filtered[::-1]
+
+print(is_valid_palindrome("A man, a plan, a canal: Panama"))
+print(is_valid_palindrome("race a car"))
+
+# Question 2: Find the maximum product of two integers in a list
+def max_product(lst):
+    lst.sort()
+    return max(lst[0] * lst[1], lst[-1] * lst[-2])
+
+print(max_product([-10, -20, 1, 3, 2]))
+
+# Question 3: Implement binary search on a sorted list
+def binary_search(lst, target):
+    left, right = 0, len(lst) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if lst[mid] == target:
+            return mid
+        elif lst[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+
+print(binary_search([1, 3, 5, 7, 9], 7))
+
+# Question 4: Count the frequency of words in a given string
+def word_frequency(s):
+    from collections import Counter
+    words = s.split()
+    return Counter(words)
+
+print(word_frequency("the quick brown fox jumps over the lazy dog"))
+
+# Question 5: Rotate a list to the right by k steps
+def rotate_list(lst, k):
+    k %= len(lst)
+    return lst[-k:] + lst[:-k]
+
+print(rotate_list([1, 2, 3, 4, 5], 2))
+
+# Question 6: Find the common elements between two lists
+def common_elements(lst1, lst2):
+    return list(set(lst1) & set(lst2))
+
+print(common_elements([1, 2, 3], [3, 4, 5]))
+
+# Question 7: Group anagrams together
+def group_anagrams(words):
+    from collections import defaultdict
+    anagrams = defaultdict(list)
+    for word in words:
+        anagrams[tuple(sorted(word))].append(word)
+    return list(anagrams.values())
+
+print(group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+
+# Question 8: Flatten a nested dictionary
+def flatten_dict(d, parent_key='', sep='.'):
+    items = []
+    for k, v in d.items():
+        new_key = f"{parent_key}{sep}{k}" if parent_key else k
+        if isinstance(v, dict):
+            items.extend(flatten_dict(v, new_key, sep=sep).items())
+        else:
+            items.append((new_key, v))
+    return dict(items)
+
+print(flatten_dict({"a": {"b": {"c": 1}}, "d": 2}))
+
+# Question 9: Find the smallest missing positive integer
+def smallest_missing_positive(nums):
+    nums = set(nums)
+    smallest = 1
+    while smallest in nums:
+        smallest += 1
+    return smallest
+
+print(smallest_missing_positive([3, 4, -1, 1]))
+
+# Question 10: Find the transpose of a matrix
+def transpose(matrix):
+    return [list(row) for row in zip(*matrix)]
+
+print(transpose([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
