@@ -1,0 +1,82 @@
+# Python Questions
+
+# Question 1: Find the second most frequent character in a string
+def second_most_frequent(s):
+    from collections import Counter
+    freq = Counter(s)
+    most_common = freq.most_common()
+    return most_common[1][0] if len(most_common) > 1 else None
+
+print(second_most_frequent("banana"))
+
+# Question 2: Merge two dictionaries and sum values of common keys
+def merge_dicts(dict1, dict2):
+    from collections import Counter
+    return dict(Counter(dict1) + Counter(dict2))
+
+print(merge_dicts({"a": 2, "b": 3}, {"b": 4, "c": 5}))
+
+# Question 3: Check if a string is a subsequence of another string
+def is_subsequence(s, t):
+    iter_t = iter(t)
+    return all(char in iter_t for char in s)
+
+print(is_subsequence("abc", "ahbgdc"))
+print(is_subsequence("axc", "ahbgdc"))
+
+# Question 4: Find all permutations of a string
+def string_permutations(s):
+    from itertools import permutations
+    return ["".join(p) for p in permutations(s)]
+
+print(string_permutations("abc"))
+
+# Question 5: Find the kth smallest element in an array
+def kth_smallest(arr, k):
+    return sorted(arr)[k - 1]
+
+print(kth_smallest([7, 10, 4, 3, 20, 15], 3))
+
+# Question 6: Convert a list of integers to a single integer
+def list_to_integer(lst):
+    return int("".join(map(str, lst)))
+
+print(list_to_integer([1, 2, 3, 4]))
+
+# Question 7: Count the number of vowels in a string
+def count_vowels(s):
+    return sum(1 for char in s.lower() if char in "aeiou")
+
+print(count_vowels("hello world"))
+
+# Question 8: Reverse words in a sentence
+def reverse_words(sentence):
+    return " ".join(word[::-1] for word in sentence.split())
+
+print(reverse_words("hello world"))
+
+# Question 9: Generate Pascal's triangle up to n rows
+def pascals_triangle(n):
+    result = []
+    for i in range(n):
+        row = [1] * (i + 1)
+        for j in range(1, i):
+            row[j] = result[i - 1][j - 1] + result[i - 1][j]
+        result.append(row)
+    return result
+
+print(pascals_triangle(5))
+
+# Question 10: Find the longest substring without repeating characters
+def longest_unique_substring(s):
+    seen = {}
+    start = max_length = 0
+    for i, char in enumerate(s):
+        if char in seen and seen[char] >= start:
+            start = seen[char] + 1
+        seen[char] = i
+        max_length = max(max_length, i - start + 1)
+    return max_length
+
+print(longest_unique_substring("abcabcbb"))
+
