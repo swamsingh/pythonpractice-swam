@@ -1,0 +1,366 @@
+
+Home
+Home » Database » SQL » SQL Query Interview Questions and Answers
+
+Top 45+ SQL Query Interview Questions and Answers
+Praveen Kumar Share
+SQL query interview questions
+With the endless amount of data available today, the role of database administrators like SQL developers has become even more relevant. Many companies look for personnel who are proficient in the use of SQL programming. In this guide for SQL query interview questions and answers, you will find the top interview questions commonly asked by interviewers. So, let’s begin.
+
+Table of Contents
+Beginner-Level SQL Query Interview Questions for Freshers
+Here are some basic sql query interview questions asked in the interview for freshers.
+
+1. What is SQL?
+It is a structured query language that operates on relational databases. Its purpose is to store, retrieve, manipulate, create, and delete data from the tables. 
+
+2. Describe a database.
+A database is a collection of tables, queries, views, and schemas. 
+
+3. What are tables and fields in SQL?
+A table has rows and columns. Rows are called records, and columns are called fields. Fields are also known as columns or attributes. 
+
+4. Explain the field in SQL in detail.
+Each field has a name and a specific data type, such as text, number, date, or boolean. 
+
+For example:
+
+Table Name	Fields
+Customers	Customer_name, customer_id, customer_phone, customer_address
+Product	Product_name, product_id, product_price, product_quantity
+5. What is a QUERY in SQL?
+A SQL query is used to retrieve data from the database.
+
+6. What is a subquery in SQL?
+    A subquery is embedded within a query. It acts as a filter or condition. 
+
+For example –
+
+SELECT column1, column2
+
+                  FROM table1
+
+                  WHERE column3 IN (SELECT column3 FROM table2 WHERE condition) ;
+7. What is the difference between the WHERE and HAVING clauses?
+The main distinctions between these two clauses are –
+
+WHERE Clause	HAVING Clause
+It cannot be used with aggregates.	It can be used with aggregates.
+It acts as a pre-filter to sort and retrieve the data.	It behaves as a post-filter. 
+It filters the rows based on a condition or a column and is applied before any grouping takes place.	It filters groups using aggregate functions like sum, count, and average and is applied after grouping and filtering.
+8. Does SQL support other programming languages?
+It does not facilitate programming because it is a command language rather than a language for writing programs. 
+
+9. What is a trigger?
+A trigger is a system statement that automatically runs when a database is modified, describing its timing and action upon activation.
+
+10. What is the main distinction between local and global variables?
+Local variables are used within sql functions with local scope, while global variables are defined independently and can be used for any function.
+
+11. What is a constraint? 
+Constraints are limitations on the data types we can include in a table. It allows us to limit the type of data that can be recorded in a given column in a table.
+
+While you go through this set of interview questions, you will understand them better when the basics of SQL are clear to you. You can learn the basics by choosing to take up a SQL course and brush up on your understanding of the concepts.
+
+Intermediate-Level SQL Query Interview Questions and Answers
+Here are a few complex SQL queries interview questions that will help you prepare for interviews.
+
+12. Construct a SQL query to derive the first_name in the upper case from the EmpInfo table. Use the ALIAS name as Emp_Name.
+SELECT UPPER(first_name) AS Emp_Name FROM EmpInfo; 
+
+13. Create a query to determine how many people are employed in the “Finance” department.
+SELECT COUNT(*) FROM EmpInfo WHERE Department = ‘Finance’;
+
+14. To obtain the current date, create a query.
+SELECT GETDATE ();
+
+15. Create a query to get the EmployeeInfo table’s last_name column’s first four characters for each employee.
+SELECT SUBSTRING (last_name, 1, 4) FROM EmpInfo;
+
+16. In the Address column of the EmployeeInfo table, create a query to retrieve only the place name (the string before the brackets).
+Using SUBSTRING
+
+            SELECT SUBSTRING (Address, 1, CHARINDEX (‘ (‘, Address)) FROM EmpInfo;
+
+17. Construct a query to find the names of employees that begin with ‘P’.
+SELECT * FROM EmpInfo WHERE first_name LIKE ‘P%’;
+
+18. Create a query to list all the employees whose salaries are in the range of 30000 to 60000.
+SELECT * FROM EmpDetails WHERE Salary BETWEEN ‘30000’ AND ‘60000’;
+
+19. Write a query to create a new table with information that has been copied from an existing table’s structure.
+Using the SELECT INTO command:
+
+SELECT * INTO NewTable FROM EmpInfo WHERE 1 = 0;
+
+20. Write a query to retrieve the employee’s first_name and last_name in a single column as “Full_Name”. Both must be separated by space.
+SELECT CONCAT (first_name, ‘ ‘,last_name) AS Full_Name From EmpInfo;
+
+21. Create a query to derive all the records from the EmpInfo table such that the employee’s last_name is in descending order and the department is in ascending order.
+SELECT * FROM EmpInfo 
+
+ORDER BY last_name desc, 
+
+Department asc;
+
+22. Write a query to determine the total number of employees, grouped by gender, whose DOB is between 01/01/1975 and 31/12/1980. 
+SELECT COUNT(*), Gender 
+
+FROM EmpInfo 
+
+WHERE DOB BETWEEN ‘01/01/1975’ AND ‘31/12/1980’ 
+
+GROUP BY Gender;
+
+23. Create a query to retrieve information about employees whose last names contain five alphabets and the letter “A” as the final character. 
+The LIKE operator in SQL must be used to retrieve information about a specific value.
+
+SELECT * FROM EmpInfo WHERE last_name LIKE ‘____a’;
+
+SQL Query Interview Questions for Experienced Professionals
+This section covers a few SQL query interview questions for experienced professionals.
+
+24. What are the different types of constraints available in SQL?
+They are as follows: 
+
+NOT NULL: The column cannot store NULL values if it is designated as NOT NULL.
+Unique: Column or row values cannot be repeated.
+Primary Key: It is used to designate a table field as the primary key that is uniquely identified.
+Foreign Key: It is a field used to specifically identify each row in a different table. 
+Check: It aids in ensuring that a column’s values satisfy a specific condition. 
+Default: It specifies a default value for the column when no value is entered by the user.
+25. How will you specify constraints? Write the syntax.
+By using the CREATE TABLE statement or the ALTER TABLE statement for an existing table, we can specify constraints.
+
+The syntax for using the CREATE TABLE statement is:
+
+CREATE TABLE sample_table
+
+(
+
+column1 data_type(size) constraint_name,
+
+column2 data_type(size) constraint_name,
+
+column3 data_type(size) constraint_name,
+
+…
+
+);
+
+26. What are a primary key and a foreign key?
+The primary key is an identifier that locates and retrieves each record in a table without scanning through the entire table. There cannot be more than one primary key in a table. 
+
+On the other hand, the foreign key is a database constraint. It establishes a link between two tables in a relational database. 
+
+27. What do you understand by left join and right join?
+Both the left and right joins are outer joins used to combine data from two or more tables. The left join returns all the rows from the “left table” (from the left-hand side of the join keyword) and matches rows from the right-hand side of the join. The right join returns all the rows from the “right table” (from the right-hand side of the join keyword) and matches rows from the left-hand side of the join.
+
+28. List the different types of relationships in SQL.
+There are four main relationships in SQL:
+
+One-to-One (1:1) Relationship – Each record in the first table is associated with only one record in the second table, and vice-versa, by having a common attribute or key.
+One-to-Many (1:N) Relationship – Each record in the first table can be associated with multiple records in the second table. But each record in the second table is associated with only one record in the first table.
+Many-to-One (N:1) Relationship – It is the inverse of the one-to-many relationship. Each record in the second table is associated with multiple records in the first table. But each record in the first table is linked to only one record in the second table.
+Many-to-Many (N: N) Relationship – Each record in the first table can be associated with multiple records in the second table, and vice-versa. A junction table that contains foreign keys to both the first and second tables establishes this relationship.
+29. What is the difference between the CHAR and VARCHAR2 datatypes in SQL? 
+Both of these data types are used for characters. Varchar2 is used for character strings of variable length. Char is used for character strings of fixed length. 
+
+30. What are DDL Commands in SQL?
+The structure of the database is defined and modified using Data Definition Language (DDL) commands. Some of the DDL commands are –
+
+CREATE: It is used to create a table, schema, etc.
+DROP: It removes a table and other database objects.
+DROP COLUMN: It removes a column from a table.
+ALTER: It is used to create, rename, remove, or alter the data type of columns.
+TRUNCATE: It removes all the data from a table without deleting the data structure.
+31. Which Data Manipulation Language (DML) commands manipulate data in a database?
+These DML queries are used to manipulate data in a database.
+
+SELECT: It is used to retrieve all or selected data from a table.
+INSERT: This command inserts values as records into the table.
+UPDATE: It updates the existing record in a table.
+DELETE: This removes a record from the table.
+32. Explain the Data Control Language (DCL) commands.
+These commands manage the access rights and permissions of the database.
+
+GRANT: It gives permission to the users to access the database objects in a table.
+REVOKE: It withdraws permission from users for database access to perform any operations on it.
+33. What are the Transaction Control Language (TCL) commands used in SQL queries?
+The management of transactions within a database is done using transaction control language (TCL). It is employed to carry out the modifications made by the DML statements. The TCL commands in SQL are – 
+
+BEGIN: It starts a new transaction.
+COMMIT: It saves transactions made on a database.
+ROLLBACK: It restores the previous transaction and thus, rollbacks the database.
+SAVEPOINT: As the name suggests, it sets a savepoint such that all the transactions made till the savepoint cannot be rollbacked, but after ones can be.
+34. What is a stored procedure?
+A function that uses numerous SQL statements to access the database system is known as a stored procedure. 
+
+35. State the benefits and drawbacks of stored procedures.
+Benefits: It can be created once, stored, and called multiple times as needed. This encourages quicker execution, lowers network traffic, and improves data security.
+
+Drawbacks: The fact that stored procedures can only be used in databases and take up more memory on the database.
+
+Advanced-Level SQL Queries Interview Questions 
+The level of difficulty in writing SQL statements rises with complex queries. To become a successful SQL Developer, you must master the ability to handle complex queries. Here are a few complex SQL query interview questions – 
+
+36. Create a query to retrieve all information about employees excluding the employees with first names, “Tina” and “Maria” from the EmpInfo table.
+SELECT *
+
+FROM EmpInfo
+
+WHERE first_name NOT IN (‘Tina’, ‘Maria’);
+
+37. Construct a query to get details of employees with the address “MUMBAI(BOM)”.
+SELECT *
+
+FROM EmpInfo
+
+WHERE Address LIKE “MUMBAI(BOM)% “;
+
+38. Create a query to retrieve all employees who also hold EXECUTIVE positions.
+SELECT E.first_name, E.last_name, P.Emp_postion
+
+FROM EmpInfo E INNER JOIN EmployeePosition P ON
+
+E.Emp_ID = P.Emp_ID AND P.Emp_position IN (‘EXECUTIVE’);
+
+39. Make a query to derive the department-wise count of employees sorted by department’s count in ascending order.
+SELECT Department, count(Emp_ID) AS EmpDeptCount
+
+FROM EmpInfo GROUP BY Department
+
+ ORDER BY EmpDeptCount ASC;
+
+40. Make a query to pull three minimum and maximum salaries from the EmpDetails table.
+To retrieve three minimum salaries – 
+
+SELECT DISTINCT Salary
+
+FROM EmpDetails E1
+
+WHERE 3 >= (SELECT COUNT(DISTINCT Salary) FROM EmpDetails E2 WHERE E1.Salary >= E2.Salary)
+
+ORDER BY E1.Salary DESC;
+
+To retrieve three maximum salaries – 
+
+SELECT DISTINCT Salary
+
+FROM EmpDetails E1
+
+WHERE 3 >= (SELECT COUNT(DISTINCT Salary) FROM EmpDetails E2 WHERE E1.Salary >= E2.Salary)
+
+ORDER BY E1.Salary DESC;
+
+41. To fetch duplicate records from a table, create a query.
+SELECT Emp_ID, first_name, Department, COUNT(*) AS NumOccurrences
+
+FROM EmpInfo
+
+GROUP BY Emp_ID, first_name, Department
+
+HAVING COUNT(*) > 1;
+
+42. Create a query to get a list of employees working in the same department.
+SELECT DISTINCT E.Emp_ID, E.first_name, E.Department
+
+FROM EmpInfo E
+
+JOIN Employee E1 ON E.Department = E1.Department AND E.Emp_ID != E1.Emp_ID;
+
+43. Find the five-highest salaries from the EmpDetails table.
+SELECT TOP 1 salary
+
+FROM 
+
+(SELECT TOP 5 Salary
+
+FROM EmpDetails
+
+ORDER BY salary DESC) AS emp
+
+ORDER BY salary ASC;
+
+44. Create a query to list the first and last records from the Emplnfo table.
+  To display the first record –
+
+SELECT * FROM EmpInfo 
+
+WHERE Emp_ID = (SELECT MIN (Emp_ID) 
+
+FROM EmpInfo;
+
+            To display the last record –
+
+SELECT * FROM EmpInfo
+
+WHERE Emp_ID = (SELECT MAX (Emp_ID) FROM EmpInfo);
+
+45. Create a SQL query to fetch 50% of the records from the EmpInfo table.
+SELECT *
+
+FROM EmpInfo WHERE
+Emp_ID <= (SELECT COUNT (Emp_ID) / 2 FROM EmpInfo);
+
+46. Make a SQL query to derive the last 5 records from the EmpInfo table.
+SELECT * FROM EmpInfo WHERE
+
+Emp_ID <= 5 UNION SELECT * FROM
+
+(SELECT * FROM EmpInfo E ORDER BY E.Emp_ID DESC)
+
+AS E1 WHERE E1.Emp_ID <=3;
+
+Conclusion
+This guide to SQL query interview questions will help you prepare for the interview. It covers a wide range of conceptual and query-based questions. Before you start preparing for the interview, you should familiarize yourself with the basics and usage of SQL statements.
+
+← PreviousNext →
+
+Praveen Kumar 
+Praveen Kumar is the Senior Data Scientist of Internshala. He is an analytics savant who has won national analytics competitions. With more than four years of experience in analytics and Data Science, he is a master of many domains including Python, MySQL, Google Analytics, R, PowerBI, Google Data Studio, NLP, and Machine Learning.
+
+Related Post
+
+PL/SQL Procedures: Types, Functions, Applications, & Benefits
+
+SQL Roadmap for Beginners: A Comprehensive Guide to Mastering SQL
+
+How to Create a Database in PostgreSQL – A Step-By-Step Guide
+
+SQL Injection Cheat Sheet – Preventions & Vulnerabilities
+
+PL/SQL Procedures: Types, Functions, Applications, & Benefits
+
+SQL Roadmap for Beginners: A Comprehensive Guide to Mastering SQL
+Latest Posts
+What are Foundation Models in Generative AI?
+Who is a UI/UX Developer?: Roles, Skills, and Career Opportunities
+Is UI UX Design a Good Career? A Comprehensive Guide 
+Is Web Development a Good Career?
+Is HR a Good Career?
+ 
+  
+Programming
+Business & Management
+Core Engineering
+Data Science
+Design
+Artificial Intelligence
+Creative Arts
+Language
+Career Development
+Architecture
+Placement Guarantee courses
+IITM Pravartak Certification
+Refund Policy
+Help Center
+Become our Training Partner
+Terms & Conditions
+Privacy Policy
+Coupon code and offers
+Internshala
+HTML tutorial
+HTML tutorial
+HTML tutorial
+Copyright © 2024 Internshala
