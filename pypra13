@@ -1,0 +1,35 @@
+Question: How do you find the second-largest number in a list?
+Answer:
+
+python
+Copy code
+def second_largest(numbers):
+    unique_numbers = list(set(numbers))
+    unique_numbers.sort()
+    return unique_numbers[-2] if len(unique_numbers) > 1 else None
+
+numbers = [10, 20, 4, 20, 10]
+print(second_largest(numbers))  # Output: 10
+Question: Write a Python program to count the frequency of characters in a string using collections.Counter.
+Answer:
+
+python
+Copy code
+from collections import Counter
+
+def char_frequency(string):
+    return Counter(string)
+
+print(char_frequency("data science"))  
+# Output: Counter({' ': 1, 'd': 1, 'a': 2, 't': 1, 's': 1, 'c': 2, 'i': 1, 'e': 2, 'n': 1})
+Question: Write a Python program to reverse a string using recursion.
+Answer:
+
+python
+Copy code
+def reverse_string(string):
+    if len(string) == 0:
+        return string
+    return string[-1] + reverse_string(string[:-1])
+
+print(reverse_string("data"))  # Output: "atad"
