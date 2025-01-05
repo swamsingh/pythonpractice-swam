@@ -1,0 +1,37 @@
+What are Python's key features?
+
+High-level, interpreted, and dynamically typed language.
+Supports object-oriented, procedural, and functional programming.
+Extensive standard library and third-party packages.
+Platform-independent and easy to learn.
+Explain Python's GIL (Global Interpreter Lock).
+The GIL ensures that only one thread executes Python bytecode at a time, even on multi-core systems. It simplifies memory management but limits true parallel execution of threads.
+
+Differentiate between deepcopy() and copy().
+
+copy(): Creates a shallow copy (references nested objects).
+deepcopy(): Creates a deep copy (recursively copies all objects).
+What are Python decorators?
+Functions that modify the behavior of other functions or methods by wrapping them, typically using the @decorator syntax.
+
+How does Python handle memory management?
+Python uses automatic memory management with garbage collection to free unused objects, along with reference counting for memory allocation.
+
+What is a lambda function?
+An anonymous, single-expression function defined using the lambda keyword.
+Example: lambda x, y: x + y.
+
+Explain list comprehension.
+A concise way to create lists.
+Example: [x**2 for x in range(5)] outputs [0, 1, 4, 9, 16].
+
+What is the difference between is and == in Python?
+
+is: Checks if two objects reference the same memory location.
+==: Checks if the values of two objects are equal.
+What are Python’s mutable and immutable data types?
+
+Mutable: Lists, dictionaries, sets.
+Immutable: Strings, tuples, numbers.
+Explain Python's exception hierarchy.
+Built-in exceptions are organized hierarchically with BaseException at the top. Common ones include Exception, ValueError, KeyError, TypeError, etc.
