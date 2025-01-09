@@ -1,0 +1,34 @@
+
+Reverse a String:
+
+python
+Copy code
+string = "hello"
+print(string[::-1])
+Check if a Number is Prime:
+
+python
+Copy code
+num = 29
+print(all(num % i != 0 for i in range(2, int(num ** 0.5) + 1)) and num > 1)
+Find the Factorial of a Number:
+
+python
+Copy code
+num = 5
+result = 1
+for i in range(1, num + 1):
+    result *= i
+print(result)
+
+
+
+
+
+
+
+
+
+
+
+ChatGPT can make
